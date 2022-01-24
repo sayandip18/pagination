@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
+import { Post } from './components/Post';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -20,8 +21,9 @@ function App() {
   }, [])
 
   return (
-    <div class="container">
-      <h1>My app</h1>
+    <div class="container mt-5">
+      <h1 className='text-primary mb-3'>My Blog</h1>
+      <Post posts={posts} loading={loading} />
     </div>
   );
 }
